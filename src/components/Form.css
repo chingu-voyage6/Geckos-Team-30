@@ -1,4 +1,5 @@
-.form-container {
+/* Sean's Styles */
+/* .form-container {
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -12,6 +13,7 @@ input {
   border-radius: 20px;
   border: none;
   margin-right: 10px;
+  text-align: center;
 }
 
 .form-input {
@@ -29,4 +31,4 @@ button {
   border: none;
   background: orange;
   color: white;
-}
+} */

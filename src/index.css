@@ -16,6 +16,6 @@ body {
 
 @media (min-width: 1000px) {
   body {
-    background-image: url('./Fork.jpg');
+    /* background-image: url('./Fork.jpg'); */
   }
 }
