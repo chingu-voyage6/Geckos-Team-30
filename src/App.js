@@ -17,7 +17,8 @@ class App extends Component {
     exactIngredients: false,
     numberOfIngredients: 0,
     recipes: '',
-    error: `Please enter the ingredients you've got in your fridge`
+    welcomeMessage: `Please enter the ingredients you've got in your fridge`,
+    noRecipesFoundMessage: 'No recipes found',
   }
 
   // Build fetch URL based on user input
@@ -85,7 +86,8 @@ class App extends Component {
         <Form getRecipe={this.getRecipe} />
         <Recipes
           recipes={this.state.recipes}
-          error={this.state.error}
+          welcomeMessage={this.state.welcomeMessage}
+          noRecipesFoundMessage={this.state.noRecipesFoundMessage}
         />
       </div>
     );

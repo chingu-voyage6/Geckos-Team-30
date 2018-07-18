@@ -5,7 +5,9 @@ import './Recipes.css';
 
 const Recipes = props => {
   
-  if (props.recipes.hits) {
+  if (props.recipes.hits && props.recipes.hits.length === 0) {
+    return <div className="recipes"><p>{props.noRecipesFoundMessage}</p></div>;
+  } else if (props.recipes.hits) {
     const recipeList = props.recipes.hits.map((hit, index) => (
       <li key={index}>
         <Recipe 
@@ -19,10 +21,8 @@ const Recipes = props => {
     ));
     return <div className="recipes"><ul>{recipeList}</ul></div>;
   } else {
-    return <div className="recipes"><p>{props.error}</p></div>;
+    return <div className="recipes"><p>{props.welcomeMessage}</p></div>;
   }
-  
-  // return 'Test';
 };
 
 export default Recipes;
