@@ -11,8 +11,8 @@ const Form = props => (
   <div className="form-container">
     <form onSubmit={props.getRecipe}>
       <input className="form-input-ingredients" type="text" name="ingredients" placeholder="Please enter your ingredients..." />
-      <input className="form-input-min-calories" type="number" name="minCalories" placeholder="Please enter your ingredients..." />
-      <input className="form-input-max-calories" type="number" name="maxCalories" placeholder="Please enter your ingredients..." />
+      <input className="form-input-min-calories" type="number" name="minCalories" placeholder="Please enter the minimum calories..." />
+      <input className="form-input-max-calories" type="number" name="maxCalories" placeholder="Please enter the maximum calories..." />
       {/* Dropdown menu for diet options */}
       <select name="diet" id="">
         {dietOptions.map((diet, index) => {

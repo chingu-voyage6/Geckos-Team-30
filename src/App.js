@@ -10,6 +10,12 @@ const appKey = process.env.REACT_APP_API_KEY;
 class App extends Component {
   state = {
     ingredients: '',
+    minCalories: '',
+    maxCalories: '',
+    diet: '',
+    health: '',
+    exactIngredients: false,
+    numberOfIngredients: 0,
     recipes: '',
     error: `Please enter the ingredients you've got in your fridge`
   }
@@ -61,11 +67,11 @@ class App extends Component {
       const exactIngredients = e.target.elements.exact.checked;
 
       const url = this.buildURL(ingredients, minCalories, maxCalories, diet, health, exactIngredients, numberOfIngredients);
-      this.setState({ ingredients });
+      this.setState({ ingredients, minCalories, maxCalories, diet, health, exactIngredients, numberOfIngredients });
       console.log(url);
       const response = await fetch(url);
       const recipes = await response.json();
-      console.log(recipes);
+      console.log(recipes, 'from app.js');
       this.setState({ recipes });
     } else {
       this.setState({ recipes : ''});
