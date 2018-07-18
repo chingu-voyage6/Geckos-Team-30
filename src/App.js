@@ -86,6 +86,7 @@ class App extends Component {
         <Form getRecipe={this.getRecipe} />
         <Recipes
           recipes={this.state.recipes}
+          numberOfIngredients={this.state.numberOfIngredients}
           welcomeMessage={this.state.welcomeMessage}
           noRecipesFoundMessage={this.state.noRecipesFoundMessage}
         />

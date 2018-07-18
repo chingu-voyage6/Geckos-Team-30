@@ -15,6 +15,8 @@ const Recipes = props => {
           title = {hit.recipe.label}
           url = {hit.recipe.url}
           calories = {hit.recipe.calories}
+          ingredients = {hit.recipe.ingredients}
+          numberOfIngredients = {props.numberOfIngredients}
           yield = {hit.recipe.yield}
         />
       </li>
