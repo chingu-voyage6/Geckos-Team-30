@@ -1,7 +1,13 @@
 import React from 'react';
+
 import Recipe from './Recipe';
 
 import './Recipes.css';
+
+const getRecipeId = (url) => {
+  const regExp = /(?<=recipe_)\S+/gmi;
+  return regExp.exec(url)[0];
+}
 
 const Recipes = props => {
   
@@ -18,6 +24,11 @@ const Recipes = props => {
           ingredients = {hit.recipe.ingredients}
           numberOfIngredients = {props.numberOfIngredients}
           yield = {hit.recipe.yield}
+          dietLabels = {hit.recipe.dietLabels}
+          healthLabels = {hit.recipe.healthLabels}
+          totalNutrients = {hit.recipe.totalNutrients}
+          // Get the recipe ID from the uri
+          id = {getRecipeId(hit.recipe.uri)}
         />
       </li>
     ));

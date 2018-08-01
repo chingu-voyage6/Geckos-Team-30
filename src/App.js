@@ -69,7 +69,7 @@ class App extends Component {
 
       const url = this.buildURL(ingredients, minCalories, maxCalories, diet, health, exactIngredients, numberOfIngredients);
       this.setState({ ingredients, minCalories, maxCalories, diet, health, exactIngredients, numberOfIngredients });
-      console.log(url);
+      console.log(url,'url from app.js');
       const response = await fetch(url);
       const recipes = await response.json();
       console.log(recipes, 'from app.js');
@@ -77,6 +77,17 @@ class App extends Component {
     } else {
       this.setState({ recipes : ''});
     };
+  }
+  
+  componentDidUpdate = () => {
+    const recipes = JSON.stringify(this.state.recipes);
+    localStorage.setItem('recipes', recipes);
+  }
+
+  componentDidMount = () => {
+    const json = localStorage.getItem('recipes');
+    const recipes = JSON.parse(json);
+    this.setState({ recipes });
   }
 
   render() {

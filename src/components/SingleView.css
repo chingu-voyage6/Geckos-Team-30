@@ -1,0 +1,16 @@
+.single-recipe {
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.single-recipe ul {
+  display: block;
+  list-style-type: none;
+}
+
+img {
+  height: auto;
+  width: auto;
+}
+
