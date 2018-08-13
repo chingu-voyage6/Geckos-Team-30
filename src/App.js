@@ -66,13 +66,10 @@ class App extends Component {
       const diet = e.target.elements.diet.value;
       const health = e.target.elements.health.value;
       const exactIngredients = e.target.elements.exact.checked;
-
       const url = this.buildURL(ingredients, minCalories, maxCalories, diet, health, exactIngredients, numberOfIngredients);
       this.setState({ ingredients, minCalories, maxCalories, diet, health, exactIngredients, numberOfIngredients });
-      console.log(url,'url from app.js');
       const response = await fetch(url);
       const recipes = await response.json();
-      console.log(recipes, 'from app.js');
       this.setState({ recipes });
     } else {
       this.setState({ recipes : ''});
@@ -85,7 +82,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    if (this.state.recipes) {
+    if (localStorage.getItem('recipes')) { 
       const json = localStorage.getItem('recipes');
       const recipes = JSON.parse(json);
       this.setState({ recipes });

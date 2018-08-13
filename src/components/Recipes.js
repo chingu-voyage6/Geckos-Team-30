@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Recipe from './Recipe';
 
@@ -10,7 +10,6 @@ const getRecipeId = (url) => {
 }
 
 const Recipes = props => {
-  
   if (props.recipes.hits && props.recipes.hits.length === 0) {
     return <div className="recipes"><p>{props.noRecipesFoundMessage}</p></div>;
   } else if (props.recipes.hits) {
