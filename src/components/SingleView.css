@@ -1,5 +1,6 @@
 .single-recipe {
   text-align: center;
+  background: rgba(255, 255, 255, 0.7);
   margin: 0 auto;
   width: 70%;
 }
@@ -9,8 +10,61 @@
   list-style-type: none;
 }
 
-img {
-  height: auto;
-  width: auto;
+.single-recipe #title, .single-recipe #ingredients, .single-recipe #health, .single-recipe #nutrients, .single-recipe #calories, .single-recipe #diet{
+  margin: 0;
+  padding: 0;
+  background: orange;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  font-weight: bold;
 }
 
+#gridMenu {
+  margin:0;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 110px;
+  grid-row-gap: 50px;
+  grid-auto-flow: row;
+}
+
+.gridDivs {
+  width: 100%;
+}
+
+.single-recipe img {
+  margin: 10px;
+  height: auto;
+  width: auto;
+  border-radius: 20px;
+}
+
+#homeButton {
+  height: 40px;
+  width: 120px;
+  border-radius: 20px;
+  border: none;
+  background: orange;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#homeLink, #homeLink:visited, #homeLink:hover {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 950px) {
+  #gridMenu {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .single-recipe {
+    width: 100%;
+  }
+}

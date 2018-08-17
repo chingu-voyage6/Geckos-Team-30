@@ -3,16 +3,18 @@ import { Link } from 'react-router-dom';
 
 import './Recipe.css';
 
+const checkForm = (ingredients, kind = '') => {
+  if (ingredients=== 0) {
+    return false;
+  } else if (ingredients === 1) {
+    return `1 ${kind} ingredient`;
+  } else if (ingredients > 1) {
+    return `${ingredients} ${kind} ingredients`;
+  }  
+}
+
 const Recipe = props => {
-  let missingIngredients = props.ingredients.length - props.numberOfIngredients;
-  
-  if (missingIngredients === 0) {
-    missingIngredients = false;
-  } else if (missingIngredients === 1) {
-    missingIngredients = '1 ingredient missing';
-  } else if (missingIngredients > 1) {
-    missingIngredients = `${missingIngredients} ingredients missing`;
-  }
+  let missingIngredients = checkForm(props.ingredients.length - props.numberOfIngredients);
 
   return (
     <div className="recipe">
@@ -24,11 +26,11 @@ const Recipe = props => {
         <img src={props.img} alt="" />
       </Link>
       {/* </a> */}
-      <p>{props.title.length < 20 ? `${props.title}`: `${props.title.substring(0,20)}...`}</p>
+      <p className="title">{props.title.length < 20 ? `${props.title}`: `${props.title.substring(0,20)}...`}</p>
       <p>{Math.round(props.calories / props.yield)} calories per serving</p>
       <p>{props.ingredients.length} recipe ingredients</p>
-      <p>{props.numberOfIngredients} fridge ingredients</p>
-      {missingIngredients && <p>{missingIngredients}</p>}
+      {props.numberOfIngredients > 0 && <p>{checkForm(props.numberOfIngredients, 'fridge')}</p>}
+      {props.numberOfIngredients > 0 && missingIngredients && <p>{missingIngredients} missing</p>}
     </div>
   )
 };

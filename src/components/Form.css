@@ -1,34 +1,63 @@
-/* Sean's Styles */
-/* .form-container {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 310px;
+.container {
+  max-width: 950px;
 }
 
-input {
+form {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  margin: 0 auto;
+}
+
+input, select {
   height: 40px;
-  width: 260px;
   border-radius: 20px;
   border: none;
   margin-right: 10px;
   text-align: center;
 }
-
-.form-input {
-  padding-right: 10px !important;
+ #exact {
+   margin-left: 10px;
 }
 
-input::placeholder {
-  text-align: center;
+#exactMenu {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  padding-right: 3px; 
+  border: 2px solid white;
 }
 
-button {
+input#ingredients {
+  width: 260px;
+}
+
+#minCal, #maxCal {
+  width: 120px;
+}
+
+label {
+  color: white;
+}
+
+form button {
   height: 40px;
   width: 40px;
+  cursor: pointer;
   border-radius: 20px;
   border: none;
   background: orange;
   color: white;
-} */
+}
+
+@media (max-width: 950px) {
+  form {
+    flex-direction: column;
+  }
+  input, select, form button {
+    margin-bottom: 10px;
+  }
+}

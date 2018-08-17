@@ -15,13 +15,13 @@ header h2 {
   letter-spacing: 1px;
 }
 
-header a {
+header #homeAnchor {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   opacity: 0.9;
 }
 
-header a:hover {
+header #homeAnchor:hover {
   opacity: 1;
 }

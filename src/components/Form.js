@@ -8,11 +8,11 @@ const healthOptions = ['', 'alcohol-free', 'dairy-free', 'gluten-free', 'paleo',
 const capitalise = (str) => (str.charAt(0).toUpperCase() + str.substr(1).toLowerCase());
 
 const Form = props => (
-  <div className="form-container">
+  <div className="form-container container">
     <form onSubmit={props.getRecipe}>
-      <input className="form-input-ingredients" type="text" name="ingredients" placeholder="Please enter your ingredients..." />
-      <input className="form-input-min-calories" type="number" name="minCalories" placeholder="Please enter the minimum calories..." />
-      <input className="form-input-max-calories" type="number" name="maxCalories" placeholder="Please enter the maximum calories..." />
+      <input id="ingredients" className="form-input-ingredients" type="text" name="ingredients" placeholder="Please enter your ingredients..." />
+      <input id="minCal" className="form-input-min-calories" type="number" name="minCalories" placeholder="Min calories..." />
+      <input id="maxCal" className="form-input-max-calories" type="number" name="maxCalories" placeholder="Max calories..." />
       {/* Dropdown menu for diet options */}
       <select name="diet" id="">
         {dietOptions.map((diet, index) => {
@@ -25,9 +25,11 @@ const Form = props => (
           return <option value={health} key={index}>{capitalise(health)}</option>;
         })}
       </select>
-      <input type="checkbox" name="exact" value="exact" id="exact"/>
-      <label htmlFor="exact">Exact Ingredients</label>
       <button>GO!</button>
+      <div id="exactMenu">
+        <input type="checkbox" name="exact" value="exact" id="exact" />
+        <label htmlFor="exact">Exact Ingredients</label>
+      </div>
     </form>
   </div>
 );
