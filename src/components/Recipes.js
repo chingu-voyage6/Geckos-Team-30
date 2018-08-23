@@ -5,8 +5,8 @@ import Recipe from './Recipe';
 import './Recipes.css';
 
 const getRecipeId = (url) => {
-  const regExp = /(?<=recipe_)\S+/gmi;
-  return regExp.exec(url)[0];
+  const regExp = /_\S+/gmi;
+  return regExp.exec(url)[0].slice(1,);
 }
 
 const Recipes = props => {
